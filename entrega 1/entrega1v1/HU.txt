@@ -1,0 +1,11 @@
+H1
+Yo como administrador de La Agremiación Odontológica de Buenos Aires quiero poder dar de alta/registrar/inscribir a un odontólogo con sus respectivos datos al sistema 
+para ofrecer y coordinar sus servicios profesionales a los beneficiarios en el sitio web de la empresa y llevar un seguimiento de los mismos para retribuir por su 
+prestación. 
+R1: Los agremiados deben pagar una cuota fija mensual; se debe registrar ese pago (regla de negocio). 
+R2: Los odontólogos solamente aceptarán tratar a pacientes con obra social vigente activa.
+R3: Cada odontólogo debe tener al menos registrado un domicilio de consultorio (puede tener más) 
+R4: Se debe registrar la matricula, nombre, apellido y dni del profesional.
+
+H2
+Yo como odontólogo quiero consultar mis pagos realizados para llevar un seguimiento de mis pagos anteriores.
