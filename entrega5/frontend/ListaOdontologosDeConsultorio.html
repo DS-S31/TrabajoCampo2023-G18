@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Odontólogos - Consultorio X</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0057b3c6;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        #address-info {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: left;
+        }
+
+        #address-info span.label {
+            font-weight: bold;
+        }
+
+        #container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        #search {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        #search input {
+            width: 80%;
+            margin-right: 10px;
+        }
+
+        #user-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        #round-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #add-text-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #add-text {
+            text-align: center;
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color:  #0057b3c6;
+            color: white;
+        }
+
+        .boton-agregar-odontologo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color:  #0057b3c6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        a.link-style {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        a.link-style:hover {
+            cursor: pointer;
+        }
+
+        .enlace-estilo {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Lista de Odontólogos por Consultorio</h1>
+    </header>
+    
+    <div id="address-info" class="container">
+        <p><span class="label">Calle:</span> Ejemplo Calle <span class="label">Numero:</span> 123 <span class="label">Localidad:</span> Ejemplo Localidad</p>
+    </div>
+
+    <div id="container" class="container">
+        <div id="search" class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar...">
+            <div class="input-group-append">
+                <img id="user-icon" src="usuario.jpeg" alt="Icono de Usuario">
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+                <th>Agremiaciones</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Giacomo</td>
+                <td>Botton</td>
+                <td>42.345.678</td>
+                <td><span class="enlace-estilo">Agremiaciones</span></td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-danger" id="borrar">
+                        <img src="trash-347.png" alt="borrar">
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Boton para volver al index -->
+    <button id="inicio" class="btn btn-primary" style="position: fixed; bottom: 10px; right: 10px;">Volver al inicio</button>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+        // Redirige al usuario al inicio
+            $("#inicio").on("click", function () {
+                window.location.href = 'home/index.html';
+            });
+        })
+    </script>
+
+</body>
+</html>

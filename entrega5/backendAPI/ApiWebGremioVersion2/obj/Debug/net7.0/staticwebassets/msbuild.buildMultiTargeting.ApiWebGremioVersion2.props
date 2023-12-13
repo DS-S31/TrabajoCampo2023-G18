@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ApiWebGremioVersion2.props" />
+</Project>

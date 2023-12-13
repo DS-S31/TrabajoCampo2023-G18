@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta Provincia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f2f2f2; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0057b3c6; 
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #4a90e2;
+            border-radius: 5px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type="number"] {
+            width: 50%;
+        }
+
+        input:focus, select:focus {
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        }
+
+        .btn-primary {
+            background-color: blue;
+            border-color: blue;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #545b62;
+            border-color: #545b62;
+        }
+
+        .btn-secondary {
+            background-color: blue;
+            border-color: blue;
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #545b62;
+            border-color: #545b62;
+        }
+
+    </style>
+</head>
+
+<body>
+<form>
+    <h4 class="text-left" style="color: white">Alta Provincia</h4>
+    
+    <div class="form-group col-md-6">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+    </div>
+
+    <!-- Botones para guardar o volver al index -->
+    <div style="text-align: right;">
+        <button type="button" onclick="guardar()" class="btn btn-primary">Guardar</button>
+        <button type="button" id="botonSalir" class="btn btn-secondary">Salir</button>
+    </div>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+    function guardar() {
+        // Simula guardado de datos
+        alert('Simulando el guardado de datos');
+    }
+
+    // Variable global que almacena la información sobre el origen
+    var origen;
+
+    // Función que obtiene el valor del parámetro "origen" de la URL
+    function obtenerOrigen() {
+        var urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('origen');
+    }
+
+    // Al cargar la página, asigna el valor del parámetro "origen" a la variable global
+    window.onload = function () {
+        origen = obtenerOrigen();
+    }
+
+    // Se verifica el valor de "origen" y redirige dependiendo de donde se vino
+    document.getElementById('botonSalir').addEventListener('click', function() {
+        if (origen === '1') {
+            //Si viene de Alta Localidad, te devuelve a Alta Localidad
+            alert("Volviendo a Alta Localidad");
+            window.location.href = 'AltaLocalidad.html';
+        } else if (origen === '2') {
+            //Si viene del index, te lleva al index
+            alert("Volviendo al inicio");
+            window.location.href = 'home/index.html';
+        } else {
+            // Si no hay información sobre el origen, redirige al index
+            window.location.href = 'home/index.html';
+        }
+    });
+</script>
+</body>
+</html>

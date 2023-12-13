@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Alta Odontólogo</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="scriptAltaOdontologo.js" defer></script>
+
+    <style>
+
+        body {
+            background-color: #000000b0;
+        }
+
+        .container {
+            background-color:#0057b3c6;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .table-bordered {
+            border: 2px solid #0057b3c6;
+        }
+
+        form label, h4 {
+            color: white;
+        }
+
+        .fixed-bottom-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .icono-consultorio {
+            
+            width: 30px;
+            height: 30px;
+        }
+
+        .table-bordered {
+            border-collapse: collapse;
+            margin: 0;
+        }
+
+        .table-bordered td, .table-bordered th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        .input-group-with-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group-with-icon .input-group-text {
+            border-right: 0;
+            margin-left: 20px;
+        }
+
+        .input-group-with-icon .form-control {
+            border-left: 0;
+        }
+
+        .btn-adjust-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        td , th{
+            background-color: #ffffff;
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        
+    </style>
+    
+</head>
+<body>
+<div class="container mt-4">
+    <h4 class="text-left">Alta Odontólogo</h4>
+    
+    <form>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido">
+        </div>
+
+        <div class="form-group">
+            <label for="dni">DNI:</label>
+            <input type="text" class="form-control" id="dni" placeholder="Ingrese su DNI">
+        </div>
+
+        <hr class="mt-5">
+        
+        <label>Consultorio:</label>
+        <div class="row mt-4">
+            <div class="col-md-9">
+                <div class="input-group mb-3 input-group-with-icon">
+                    <select id="opcion" name="opcion" class="form-control">
+                    </select>
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <img class="icono-consultorio" src="hogar.png" alt="home"/>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="button" id="agregarConsultorio" class="btn btn-success btn-block btn-adjust-text"><i class="fas fa-plus"></i>+</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" onclick="altaC()" class="btn btn-success btn-block btn-adjust-text"><i class="fas fa-plus"></i> Crear Consultorio</button>
+                    </div>
+                </div>
+            </div></div>
+
+        <!--Tabla de Consultorios-->
+        <table id="grillaConsultorios" class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>Calle</th>
+                    <th>Número</th>
+                    <th>Localidad</th>
+                    <th>Provincia</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody id="bodyTable">
+            </tbody>
+        </table>
+</div>
+
+<!-- Botones para guardar o volver al index -->
+<div class="fixed-bottom-buttons text-right">
+    <button type="button" class="btn btn-primary" id="guardar">Guardar</button>
+    <button type="button" class="btn btn-secondary" id="salir">Salir</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
